@@ -1,47 +1,34 @@
-# 🍲 yummy-ai-slop 🍲
+# 🧟 Plants vs. Zombies 2: Into The Den (Modding Tools & Datasets) 🌿
 
-*yummy.*
-
-Welcome to **yummy-ai-slop**, the premier culinary repository for 100% cage-free, hyper-converged, artisanal AI slop.
+Welcome to the development & tooling repository for the **Into The Den (ITD)** PvZ2 mod!
 
 ---
 
-## 🍽️ What is this?
+## 🛠️ Tooling & Utilities
 
-This repository serves hallucinated latent space delicacies straight into [`THE_TROUGH.md`](THE_TROUGH.md).
+### 🌿 Level Generator Studio (`tools/level_gen_studio.py`)
+A visual, web-based procedurally generated level studio built on mathematical models extracted from **3,579+ official and mod levels**.
 
-## 🥄 The Slop Dispenser (`slop_dispenser.py`)
+#### Features:
+- **Interactive Visual Studio UI:** Dark-mode workbench with live wave pacing timeline, zombie composition tags, flag wave indicators, and Plant Food drops.
+- **World Presets:** Native support for Ancient Egypt (Day/Night), Heian Dynasty (Day/Night), Pirate Seas (with plank configurations), Dark Ages, and Modern Day.
+- **Mod Roster Integration:** Direct support for custom mod zombies (Armor 4 tiers, Heian imports, female zombies, specials) and plants (`agave`, `whitemelon`, `seashroom`, `pineneedler`).
+- **Challenge Injectors:** Save Our Seeds (`ProtectThePlantChallengeProperties`), tombstone spawns, and night stages.
+- **1-Click Disk Sync:** Save generated levels directly to `Levels/ITD/<filename>.json`.
 
-A fully automated, zero-dependency Python script that brews multi-course AI slop meals, updates the trough, crafts an artisanal commit message, and pushes it right into the repository.
+#### How to Launch the Web Studio:
+```bash
+python3 tools/level_gen_studio.py
+```
+*Opens automatically at `http://127.0.0.1:8765` in your browser.*
 
-### Quick Usage:
-
-1. **Taste test without committing (Dry Run):**
-   ```bash
-   python3 slop_dispenser.py --dry-run
-   ```
-
-2. **Serve a fresh dish to the trough & push:**
-   ```bash
-   python3 slop_dispenser.py
-   ```
-
-3. **Choose your flavor profile:**
-   ```bash
-   # Available flavors: culinary, corporate, existential, pitch, random
-   python3 slop_dispenser.py --flavor existential
-   ```
-
-4. **Multi-course banquet:**
-   ```bash
-   python3 slop_dispenser.py -n 3 --auto-push
-   ```
-
-5. **Inspect the trough:**
-   ```bash
-   python3 slop_dispenser.py --inspect
-   ```
+#### CLI Mode (for batch generation or automated scripts):
+```bash
+# Generate a 14-wave Heian Dynasty level with difficulty 3
+python3 tools/level_gen_studio.py --cli --world heian --waves 14 --diff 3 --output Levels/ITD/HEIAN2.json
+```
 
 ---
 
-*Remember: The loss must decrease, but the slop must flow.* 🥣✨
+## 🔄 Git Sync Helper (`github.py`)
+Run `python3 github.py` for the interactive Git menu (push, pull, force-pull with LFS, and automatic asset compilation hooks).
