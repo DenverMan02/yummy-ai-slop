@@ -1,0 +1,493 @@
+{
+	"#comment": "HD - Night 1: Moonlit Mount | ELM: Ver-10.3 [VNL v9.6]", 
+	"#zombies": "heian, heian_armor1, heian_armor2", 
+	"objects": [
+		{
+			"objclass": "LevelDefinition", 
+			"objdata": {
+				"StartingSun": 50, 
+				"Description": "{PLAYER}'s Trip Into the Den!", 
+				"FirstRewardType": "unlock_plant", 
+				"FirstRewardParam": "sunshroom", 
+				"NormalPresentTable": "egypt_normal_01", 
+				"ShinyPresentTable": "egypt_shiny_01", 
+				"Loot": "RTID(DefaultLoot@LevelModules)", 
+				"ResourceGroupNames": [
+					"DelayLoad_Background_Beach", 
+					"DelayLoad_Background_Beach_Compressed", 
+					"Tombstone_Dark_Special", 
+					"Tombstone_Dark_Effects"
+				], 
+				"Modules": [
+					"RTID(WidescreenFix@LevelModules)", 
+					"RTID(Night@LevelModules)", 
+					"RTID(HeianMowers@LevelModules)", 
+					"RTID(StandardIntro@LevelModules)", 
+					"RTID(SeedBank@CurrentLevel)", 
+					"RTID(Escalation@CurrentLevel)", 
+					"RTID(NewWaves@CurrentLevel)", 
+					"RTID(ZombiesDeadWinCon@LevelModules)", 
+					"RTID(DefaultZombieWinCondition@LevelModules)"
+				], 
+				"Name": "HD - Night 1: Moonlit Mount", 
+				"StageModule": "RTID(HeianNightStage@LevelModules)"
+			}
+		}, 
+		{
+			"aliases": [
+				"SeedBank"
+			], 
+			"objclass": "SeedBankProperties", 
+			"objdata": {
+				"PresetPlantList": [
+					{
+						"PlantType": "puffshroom", 
+						"Level": 0
+					}
+				], 
+				"PlantIncludeList": [], 
+				"PlantExcludeList": [], 
+				"SelectionMethod": "chooser"
+			}
+		}, 
+		{
+			"aliases": [
+				"Escalation"
+			], 
+			"objclass": "LevelEscalationModuleProperties", 
+			"objdata": {
+				"FlagCount": 1, 
+				"WavesPerFlag": 11, 
+				"PlantfoodToSpawnCount": 0, 
+				"StartingPoints": 0, 
+				"PointIncrementPerWave": 0, 
+				"WaveManagerProps": "RTID(WaveManager@CurrentLevel)", 
+				"ZombiePool": [
+					"RTID(tutorial@ZombieTypes)"
+				]
+			}
+		}, 
+		{
+			"aliases": [
+				"NewWaves"
+			], 
+			"objclass": "WaveManagerModuleProperties", 
+			"objdata": {}
+		}, 
+		{
+			"aliases": [
+				"WaveManager"
+			], 
+			"objclass": "WaveManagerProperties", 
+			"objdata": {
+				"FlagWaveInterval": 11, 
+				"WaveCount": 11, 
+				"SuppressFlagZombie": true, 
+				"MinNextWaveHealthPercentage": 0.45, 
+				"MaxNextWaveHealthPercentage": 0.5, 
+				"Waves": [
+					[
+						"RTID(Wave1@.)"
+					], 
+					[
+						"RTID(Wave2@.)"
+					], 
+					[
+						"RTID(Wave3@.)"
+					], 
+					[
+						"RTID(Wave4@.)"
+					], 
+					[
+						"RTID(Wave5@.)"
+					], 
+					[
+						"RTID(Wave6@.)"
+					], 
+					[
+						"RTID(Wave7@.)"
+					], 
+					[
+						"RTID(Wave8@.)"
+					], 
+					[
+						"RTID(Wave9@.)"
+					], 
+					[
+						"RTID(Wave10@.)"
+					], 
+					[
+						"RTID(Wave11@.)", 
+						"RTID(GridSpawnII11@.)"
+					]
+				]
+			}
+		}, 
+		{
+			"aliases": [
+				"Wave1"
+			], 
+			"objclass": "SpawnZombiesJitteredWaveActionProps", 
+			"objdata": {
+				"AdditionalPlantfood": 0, 
+				"Zombies": [
+					{
+						"Type": "RTID(heian@ZombieTypes)"
+					}
+				]
+			}
+		}, 
+		{
+			"aliases": [
+				"Wave2"
+			], 
+			"objclass": "SpawnZombiesJitteredWaveActionProps", 
+			"objdata": {
+				"AdditionalPlantfood": 0, 
+				"Zombies": [
+					{
+						"Row": "4", 
+						"Type": "RTID(heian@ZombieTypes)"
+					}
+				]
+			}
+		}, 
+		{
+			"aliases": [
+				"Wave3"
+			], 
+			"objclass": "SpawnZombiesJitteredWaveActionProps", 
+			"objdata": {
+				"AdditionalPlantfood": 0, 
+				"Zombies": [
+					{
+						"Row": "3", 
+						"Type": "RTID(heian_armor1@ZombieTypes)"
+					}
+				]
+			}
+		}, 
+		{
+			"aliases": [
+				"Wave4"
+			], 
+			"objclass": "SpawnZombiesJitteredWaveActionProps", 
+			"objdata": {
+				"AdditionalPlantfood": 0, 
+				"Zombies": [
+					{
+						"Row": "1", 
+						"Type": "RTID(heian@ZombieTypes)"
+					}, 
+					{
+						"Row": "3", 
+						"Type": "RTID(heian@ZombieTypes)"
+					}, 
+					{
+						"Row": "3", 
+						"Type": "RTID(heian@ZombieTypes)"
+					}
+				]
+			}
+		}, 
+		{
+			"aliases": [
+				"Wave5"
+			], 
+			"objclass": "SpawnZombiesJitteredWaveActionProps", 
+			"objdata": {
+				"AdditionalPlantfood": 0, 
+				"Zombies": [
+					{
+						"Row": "5", 
+						"Type": "RTID(heian_armor2@ZombieTypes)"
+					}
+				]
+			}
+		}, 
+		{
+			"aliases": [
+				"Wave6"
+			], 
+			"objclass": "SpawnZombiesJitteredWaveActionProps", 
+			"objdata": {
+				"AdditionalPlantfood": 1, 
+				"Zombies": [
+					{
+						"Row": "2", 
+						"Type": "RTID(heian@ZombieTypes)"
+					}, 
+					{
+						"Row": "3", 
+						"Type": "RTID(heian_armor1@ZombieTypes)"
+					}, 
+					{
+						"Row": "4", 
+						"Type": "RTID(heian_armor1@ZombieTypes)"
+					}
+				]
+			}
+		}, 
+		{
+			"aliases": [
+				"Wave7"
+			], 
+			"objclass": "SpawnZombiesJitteredWaveActionProps", 
+			"objdata": {
+				"AdditionalPlantfood": 0, 
+				"Zombies": [
+					{
+						"Row": "1", 
+						"Type": "RTID(heian@ZombieTypes)"
+					}, 
+					{
+						"Row": "2", 
+						"Type": "RTID(heian_armor1@ZombieTypes)"
+					}, 
+					{
+						"Row": "4", 
+						"Type": "RTID(heian_armor2@ZombieTypes)"
+					}, 
+					{
+						"Row": "1", 
+						"Type": "RTID(heian@ZombieTypes)"
+					}
+				]
+			}
+		}, 
+		{
+			"aliases": [
+				"Wave8"
+			], 
+			"objclass": "SpawnZombiesJitteredWaveActionProps", 
+			"objdata": {
+				"AdditionalPlantfood": 0, 
+				"Zombies": [
+					{
+						"Row": "2", 
+						"Type": "RTID(heian@ZombieTypes)"
+					}, 
+					{
+						"Row": "3", 
+						"Type": "RTID(heian_armor2@ZombieTypes)"
+					}, 
+					{
+						"Row": "5", 
+						"Type": "RTID(heian_armor1@ZombieTypes)"
+					}, 
+					{
+						"Row": "5", 
+						"Type": "RTID(heian@ZombieTypes)"
+					}, 
+					{
+						"Row": "5", 
+						"Type": "RTID(heian@ZombieTypes)"
+					}
+				]
+			}
+		}, 
+		{
+			"aliases": [
+				"Wave9"
+			], 
+			"objclass": "SpawnZombiesJitteredWaveActionProps", 
+			"objdata": {
+				"AdditionalPlantfood": 0, 
+				"Zombies": [
+					{
+						"Row": "1", 
+						"Type": "RTID(heian_armor1@ZombieTypes)"
+					}, 
+					{
+						"Row": "2", 
+						"Type": "RTID(heian_armor1@ZombieTypes)"
+					}, 
+					{
+						"Row": "3", 
+						"Type": "RTID(heian_armor1@ZombieTypes)"
+					}, 
+					{
+						"Row": "4", 
+						"Type": "RTID(heian_armor1@ZombieTypes)"
+					}, 
+					{
+						"Row": "5", 
+						"Type": "RTID(heian_armor1@ZombieTypes)"
+					}
+				]
+			}
+		}, 
+		{
+			"aliases": [
+				"Wave10"
+			], 
+			"objclass": "SpawnZombiesJitteredWaveActionProps", 
+			"objdata": {
+				"AdditionalPlantfood": 0, 
+				"Zombies": [
+					{
+						"Row": "1", 
+						"Type": "RTID(heian@ZombieTypes)"
+					}, 
+					{
+						"Row": "2", 
+						"Type": "RTID(heian_armor2@ZombieTypes)"
+					}, 
+					{
+						"Row": "3", 
+						"Type": "RTID(heian_armor1@ZombieTypes)"
+					}, 
+					{
+						"Row": "4", 
+						"Type": "RTID(heian@ZombieTypes)"
+					}, 
+					{
+						"Row": "1", 
+						"Type": "RTID(heian@ZombieTypes)"
+					}, 
+					{
+						"Row": "2", 
+						"Type": "RTID(heian@ZombieTypes)"
+					}, 
+					{
+						"Row": "3", 
+						"Type": "RTID(heian@ZombieTypes)"
+					}, 
+					{
+						"Row": "2", 
+						"Type": "RTID(heian@ZombieTypes)"
+					}
+				]
+			}
+		}, 
+		{
+			"aliases": [
+				"Wave11"
+			], 
+			"objclass": "SpawnZombiesJitteredWaveActionProps", 
+			"objdata": {
+				"AdditionalPlantfood": 0, 
+				"Zombies": [
+					{
+						"Row": "1", 
+						"Type": "RTID(heian_armor2@ZombieTypes)"
+					}, 
+					{
+						"Row": "2", 
+						"Type": "RTID(heian_armor1@ZombieTypes)"
+					}, 
+					{
+						"Row": "3", 
+						"Type": "RTID(heian_armor2@ZombieTypes)"
+					}, 
+					{
+						"Row": "4", 
+						"Type": "RTID(heian_armor1@ZombieTypes)"
+					}, 
+					{
+						"Row": "5", 
+						"Type": "RTID(heian_armor2@ZombieTypes)"
+					}, 
+					{
+						"Row": "1", 
+						"Type": "RTID(heian_armor1@ZombieTypes)"
+					}, 
+					{
+						"Row": "2", 
+						"Type": "RTID(heian_armor1@ZombieTypes)"
+					}, 
+					{
+						"Row": "4", 
+						"Type": "RTID(heian_armor1@ZombieTypes)"
+					}, 
+					{
+						"Row": "5", 
+						"Type": "RTID(heian@ZombieTypes)"
+					}
+				]
+			}
+		}, 
+		{
+			"aliases": [
+				"GridSpawnII11"
+			], 
+			"objclass": "SpawnGravestonesWaveActionProps", 
+			"objdata": {
+				"GravestonePool": [
+					{
+						"Count": 1, 
+						"Type": "RTID(zombieportal_lostcityflagportal@CurrentLevel)"
+					}
+				], 
+				"SpawnPositionsPool": [
+					{
+						"mX": 8, 
+						"mY": 2
+					}
+				], 
+				"SpawnEffectAnimID": "", 
+				"SpawnSoundID": "Play_Zomb_Egypt_TombRaiser_Grave_Rise", 
+				"DisplacePlants": true, 
+				"RandomPlacement": false, 
+				"ShakeScreen": false, 
+				"GridClassesToDestroy": []
+			}
+		}, 
+		{
+			"aliases": [
+				"zombieportal_lostcityflagportal"
+			], 
+			"objclass": "GridItemType", 
+			"objdata": {
+				"TypeName": "zombieportal_dangerroom_dino", 
+				"GridItemClass": "GridItemZombiePortal", 
+				"Properties": "RTID(zombieportal_props_lostcityflagportal@CurrentLevel)", 
+				"ResourceGroups": [
+					"ModernPortalGroup"
+				]
+			}
+		}, 
+		{
+			"aliases": [
+				"zombieportal_props_lostcityflagportal"
+			], 
+			"objclass": "GridItemZombiePortalProps", 
+			"objdata": {
+				"CanBeMowed": false, 
+				"CloseAnimation": "end", 
+				"Height": "ground", 
+				"Hitpoints": 600, 
+				"PopAnim": "POPANIM_EFFECTS_MODERN_PORTAL", 
+				"PopAnimRenderOffset": {
+					"x": 96, 
+					"y": 125
+				}, 
+				"PopAnimRigClass": "GridItemZombiePortal_AnimRig", 
+				"SpawnAnimation": "spawn", 
+				"World": "lostcity", 
+				"ZombiesToSpawn": 3, 
+				"ZombieSpawnPointOffset": 15, 
+				"TimeBetweenSpawns": {
+					"Min": 8, 
+					"Max": 10
+				}, 
+				"ZombieTypesToSpawn": [
+					{
+						"Weight": 1, 
+						"ZombieTypeName": "lostcity_flag"
+					}, 
+					{
+						"Weight": 1, 
+						"ZombieTypeName": "lostcity"
+					}, 
+					{
+						"Weight": 1, 
+						"ZombieTypeName": "lostcity_armor1"
+					}
+				]
+			}
+		}, 
+		{}
+	], 
+	"version": 1
+}

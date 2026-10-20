@@ -1,0 +1,653 @@
+{"#comment": "PH - Day 5: Unstable Rift | ELM: Ver-10.3 [VNL v9.6]",
+"#zombies": "tutorial, tutorial_armor1, tutorial_armor2, tutorial_imp, modern_polevaulter, modern_screendoor, tutorial_gargantuar",
+"objects": [{
+    "objclass": "LevelDefinition",
+    "objdata": {
+    "StartingSun": 50,
+    "Description": "{PLAYER}'s Trip Into the Den!",
+    "FirstRewardType": "unlock_plant",
+    "FirstRewardParam": "cabbagepult",
+				"GameFeaturesToUnlock": [
+					"feature_powerup_wizardfinger", 
+					"feature_powerup_flick_zombie", 
+					"feature_powerup_snowball", 
+					"feature_powerup_flamethrower"
+				], 
+				"ForceNextLevel": "egypt1", 
+    "NormalPresentTable": "egypt_normal_01",
+    "ShinyPresentTable": "egypt_shiny_01",
+    "Loot": "RTID(DefaultLoot@LevelModules)",
+    "ResourceGroupNames": [
+        "DelayLoad_Background_Beach",
+        "DelayLoad_Background_Beach_Compressed",
+        "Tombstone_Dark_Special",
+        "Tombstone_Dark_Effects"
+    ],
+    "Modules": [
+        "RTID(ModernMowers@LevelModules)",
+        "RTID(StandardIntro@LevelModules)",
+        "RTID(Conveyor@CurrentLevel)",
+        "RTID(ChallengeModule@CurrentLevel)",
+        "RTID(Escalation@CurrentLevel)",
+        "RTID(NewWaves@CurrentLevel)",
+        "RTID(ZombiesDeadWinCon@LevelModules)",
+        "RTID(DefaultZombieWinCondition@LevelModules)"
+    ],
+    "Name": "PH - Day 5: Unstable Rift",
+    "StageModule": "RTID(ModernStage@LevelModules)",
+    "MusicType": "MiniGame_A"
+}},
+{"aliases": ["Conveyor"],
+"objclass": "ConveyorSeedBankProperties",
+"objdata": {
+    "ManualPacketSpawning": false,
+    "DropDelayConditions": [
+        { "Delay": 5.16, "MaxPackets": 0 }
+    ],
+    "SpeedConditions": [
+        { "Speed": 58, "MaxPackets": 0 }
+    ],
+    "InitialPlantList": [
+        { "PlantType": "peashooter", "Weight": 100, "MaxCount": 20, "MaxWeightFactor": 0, "MaxCountCooldownSeconds": 5 },
+        { "PlantType": "potatomine", "Weight": 70, "MaxCount": 2, "MaxWeightFactor": 0, "MaxCountCooldownSeconds": 20 },
+        { "PlantType": "chomper", "Weight": 90, "MaxCount": 10, "MaxWeightFactor": 0, "MaxCountCooldownSeconds": 10 }
+    ]
+}},
+{"aliases":["ChallengeModule"],
+"objclass": "StarChallengeModuleProperties",
+"objdata": {
+    "Challenges": [[
+        "RTID(BeatTheLevel@CurrentLevel)"
+    ]],
+    "ChallengesAlwaysAvailable": true
+}},
+{"aliases":["BeatTheLevel"],
+"objclass": "StarChallengeBeatTheLevelProps",
+"objdata": {
+    "Description": "Survive a massive attack at Home",
+    "DescriptiveName": "Custom Objective"
+}},
+{"aliases": ["Escalation"],
+"objclass": "LevelEscalationModuleProperties",
+"objdata": {
+    "FlagCount": 2,
+    "WavesPerFlag": 7,
+    "PlantfoodToSpawnCount": 0,
+    "StartingPoints": 0,
+    "PointIncrementPerWave": 0,
+    "WaveManagerProps": "RTID(WaveManager@CurrentLevel)",
+    "ZombiePool": [
+        "RTID(tutorial@ZombieTypes)"
+    ]
+}},
+{"aliases": ["NewWaves"],
+"objclass": "WaveManagerModuleProperties",
+"objdata": {}
+},
+{"aliases": ["WaveManager"],
+"objclass": "WaveManagerProperties",
+"objdata": {
+    "FlagWaveInterval": 7,
+    "WaveCount": 14,
+    "SuppressFlagZombie": false,
+    "MinNextWaveHealthPercentage": 0.45,
+    "MaxNextWaveHealthPercentage": 0.5,
+    "Waves": [
+        ["RTID(Wave1@.)"],
+        ["RTID(Wave2@.)"],
+        ["RTID(Wave3@.)"],
+        ["RTID(Wave4@.)", "RTID(Conveyor4@.)"],
+        ["RTID(Wave5@.)"],
+        ["RTID(Wave6@.)"],
+        ["RTID(Wave7@.)", "RTID(GridSpawnII7@.)", "RTID(Conveyor7@.)"],
+        ["RTID(Wave8@.)"],
+        ["RTID(Wave9@.)", "RTID(GridSpawnII9@.)"],
+        ["RTID(Wave10@.)", "RTID(GridSpawnII10@.)"],
+        ["RTID(Wave11@.)"],
+        ["RTID(Wave12@.)", "RTID(GridSpawnII12@.)"],
+        ["RTID(Wave13@.)"],
+        ["RTID(Wave14@.)", "RTID(GridSpawnII14@.)"]
+    ]
+}},
+{"aliases":["Wave1"],
+"objclass": "SpawnZombiesJitteredWaveActionProps",
+"objdata":{
+    "AdditionalPlantfood": 0,
+    "Zombies": [
+        {"Type": "RTID(tutorial_armor1@ZombieTypes)"},
+        {"Type": "RTID(tutorial@ZombieTypes)"}
+    ]
+}},
+
+{"aliases":["Wave2"],
+"objclass": "SpawnZombiesJitteredWaveActionProps",
+"objdata":{
+    "AdditionalPlantfood": 0,
+    "Zombies": [
+        {"Row": "4", "Type": "RTID(tutorial@ZombieTypes)"},
+        {"Type": "RTID(modern_screendoor@ZombieTypes)"}
+    ]
+}},
+
+{"aliases":["Wave3"],
+"objclass": "SpawnZombiesJitteredWaveActionProps",
+"objdata":{
+    "AdditionalPlantfood": 0,
+    "Zombies": [
+        {"Row": "2", "Type": "RTID(tutorial_imp@ZombieTypes)"},
+        {"Row": "5", "Type": "RTID(tutorial_armor1@ZombieTypes)"},
+        {"Row": "5", "Type": "RTID(tutorial@ZombieTypes)"}
+    ]
+}},
+
+{"aliases":["Wave4"],
+"objclass": "SpawnZombiesJitteredWaveActionProps",
+"objdata":{
+    "AdditionalPlantfood": 1,
+    "Zombies": [
+        {"Row": "1", "Type": "RTID(tutorial_armor1@ZombieTypes)"},
+        {"Row": "3", "Type": "RTID(tutorial_armor1@ZombieTypes)"},
+        {"Row": "4", "Type": "RTID(tutorial@ZombieTypes)"},
+        {"Row": "4", "Type": "RTID(tutorial@ZombieTypes)"}
+    ]
+}},
+
+{"aliases":["Wave5"],
+"objclass": "SpawnZombiesJitteredWaveActionProps",
+"objdata":{
+    "AdditionalPlantfood": 0,
+    "Zombies": [
+        {"Row": "2", "Type": "RTID(modern_screendoor@ZombieTypes)"},
+        {"Row": "3", "Type": "RTID(tutorial_imp@ZombieTypes)"},
+        {"Row": "4", "Type": "RTID(tutorial_imp@ZombieTypes)"},
+        {"Row": "2", "Type": "RTID(tutorial@ZombieTypes)"}
+    ]
+}},
+
+{"aliases":["Wave6"],
+"objclass": "SpawnZombiesJitteredWaveActionProps",
+"objdata":{
+    "AdditionalPlantfood": 0,
+    "Zombies": [
+        {"Row": "1", "Type": "RTID(tutorial_armor1@ZombieTypes)"},
+        {"Row": "2", "Type": "RTID(tutorial_imp@ZombieTypes)"},
+        {"Row": "5", "Type": "RTID(tutorial_armor1@ZombieTypes)"},
+        {"Row": "1", "Type": "RTID(tutorial@ZombieTypes)"},
+        {"Row": "5", "Type": "RTID(modern_polevaulter@ZombieTypes)"}
+    ]
+}},
+
+{"aliases":["Wave7"],
+"objclass": "SpawnZombiesJitteredWaveActionProps",
+"objdata":{
+    "AdditionalPlantfood": 0,
+    "Zombies": [
+        {"Row": "1", "Type": "RTID(modern_screendoor@ZombieTypes)"},
+        {"Row": "2", "Type": "RTID(modern_polevaulter@ZombieTypes)"},
+        {"Row": "3", "Type": "RTID(modern_screendoor@ZombieTypes)"},
+        {"Row": "5", "Type": "RTID(tutorial_armor2@ZombieTypes)"},
+        {"Row": "1", "Type": "RTID(tutorial_imp@ZombieTypes)"},
+        {"Row": "3", "Type": "RTID(tutorial_imp@ZombieTypes)"}
+    ]
+}},
+
+{"aliases":["Wave8"],
+"objclass": "SpawnZombiesJitteredWaveActionProps",
+"objdata":{
+    "AdditionalPlantfood": 0,
+    "Zombies": [
+        {"Row": "1", "Type": "RTID(tutorial_armor1@ZombieTypes)"},
+        {"Row": "2", "Type": "RTID(tutorial_imp@ZombieTypes)"},
+        {"Row": "4", "Type": "RTID(modern_screendoor@ZombieTypes)"},
+        {"Row": "2", "Type": "RTID(tutorial_imp@ZombieTypes)"},
+        {"Row": "2", "Type": "RTID(tutorial_imp@ZombieTypes)"}
+    ]
+}},
+
+{"aliases":["Wave9"],
+"objclass": "SpawnZombiesJitteredWaveActionProps",
+"objdata":{
+    "AdditionalPlantfood": 1,
+    "Zombies": [
+        {"Row": "1", "Type": "RTID(modern_polevaulter@ZombieTypes)"},
+        {"Row": "3", "Type": "RTID(tutorial_armor1@ZombieTypes)"},
+        {"Row": "4", "Type": "RTID(modern_polevaulter@ZombieTypes)"},
+        {"Row": "4", "Type": "RTID(tutorial_armor1@ZombieTypes)"}
+    ]
+}},
+
+{"aliases":["Wave10"],
+"objclass": "SpawnZombiesJitteredWaveActionProps",
+"objdata":{
+    "AdditionalPlantfood": 0,
+    "Zombies": [
+        {"Row": "1", "Type": "RTID(tutorial_imp@ZombieTypes)"},
+        {"Row": "3", "Type": "RTID(tutorial_armor1@ZombieTypes)"},
+        {"Row": "4", "Type": "RTID(tutorial_armor1@ZombieTypes)"},
+        {"Row": "1", "Type": "RTID(tutorial_imp@ZombieTypes)"},
+        {"Row": "3", "Type": "RTID(tutorial_imp@ZombieTypes)"},
+        {"Row": "4", "Type": "RTID(tutorial_imp@ZombieTypes)"}
+    ]
+}},
+
+{"aliases":["Wave11"],
+"objclass": "SpawnZombiesJitteredWaveActionProps",
+"objdata":{
+    "AdditionalPlantfood": 0,
+    "Zombies": [
+        {"Row": "2", "Type": "RTID(tutorial@ZombieTypes)"},
+        {"Row": "3", "Type": "RTID(modern_polevaulter@ZombieTypes)"},
+        {"Row": "4", "Type": "RTID(modern_screendoor@ZombieTypes)"},
+        {"Row": "5", "Type": "RTID(modern_screendoor@ZombieTypes)"},
+        {"Row": "2", "Type": "RTID(tutorial@ZombieTypes)"},
+        {"Row": "4", "Type": "RTID(tutorial_armor1@ZombieTypes)"}
+    ]
+}},
+
+{"aliases":["Wave12"],
+"objclass": "SpawnZombiesJitteredWaveActionProps",
+"objdata":{
+    "AdditionalPlantfood": 0,
+    "Zombies": [
+        {"Row": "1", "Type": "RTID(tutorial_imp@ZombieTypes)"},
+        {"Row": "2", "Type": "RTID(tutorial_imp@ZombieTypes)"},
+        {"Row": "3", "Type": "RTID(tutorial_imp@ZombieTypes)"},
+        {"Row": "4", "Type": "RTID(tutorial_imp@ZombieTypes)"},
+        {"Row": "5", "Type": "RTID(tutorial_imp@ZombieTypes)"},
+        {"Row": "1", "Type": "RTID(tutorial_imp@ZombieTypes)"},
+        {"Row": "2", "Type": "RTID(modern_polevaulter@ZombieTypes)"},
+        {"Row": "3", "Type": "RTID(tutorial_imp@ZombieTypes)"},
+        {"Row": "4", "Type": "RTID(tutorial_imp@ZombieTypes)"},
+        {"Row": "5", "Type": "RTID(tutorial_imp@ZombieTypes)"}
+    ]
+}},
+
+{"aliases":["Wave13"],
+"objclass": "SpawnZombiesJitteredWaveActionProps",
+"objdata":{
+    "AdditionalPlantfood": 0,
+    "Zombies": [
+        {"Row": "1", "Type": "RTID(tutorial_armor1@ZombieTypes)"},
+        {"Row": "2", "Type": "RTID(modern_screendoor@ZombieTypes)"},
+        {"Row": "3", "Type": "RTID(modern_screendoor@ZombieTypes)"},
+        {"Row": "4", "Type": "RTID(tutorial_armor2@ZombieTypes)"},
+        {"Row": "2", "Type": "RTID(tutorial_armor1@ZombieTypes)"},
+        {"Row": "3", "Type": "RTID(tutorial_armor1@ZombieTypes)"}
+    ]
+}},
+
+{"aliases":["Wave14"],
+"objclass": "SpawnZombiesJitteredWaveActionProps",
+"objdata":{
+    "AdditionalPlantfood": 0,
+    "Zombies": [
+        {"Row": "1", "Type": "RTID(modern_screendoor@ZombieTypes)"},
+        {"Row": "2", "Type": "RTID(tutorial@ZombieTypes)"},
+        {"Row": "3", "Type": "RTID(tutorial_gargantuar@ZombieTypes)"},
+        {"Row": "4", "Type": "RTID(modern_polevaulter@ZombieTypes)"},
+        {"Row": "5", "Type": "RTID(modern_polevaulter@ZombieTypes)"}
+    ]
+}},
+{"aliases":["Conveyor4"],
+"objclass": "ModifyConveyorWaveActionProps",
+"objdata": {
+    "Remove": [
+        
+    ],
+    "Add": [
+        {"Type": "RTID(wallnut@PlantTypes)", "Weight": 80, "MaxCount": 6, "MaxWeightFactor": 0, "MaxCountCooldownSeconds": 15},
+        {"Type": "RTID(pineneedler@PlantTypes)", "Weight": 90, "MaxCount": 10, "MaxWeightFactor": 0, "MaxCountCooldownSeconds": 7.5}
+    ]
+}},
+{"aliases":["GridSpawnII7"],
+    "objclass": "SpawnGravestonesWaveActionProps",
+    "objdata": {
+        "GravestonePool": [
+            {"Count": 1, "Type": "RTID(zombieportal_darkbasicarmor1portal@CurrentLevel)"},
+            {"Count": 1, "Type": "RTID(zombieportal_egyptbasicportal@CurrentLevel)"}
+        ],
+        "SpawnPositionsPool": [{"mX": 7, "mY": 1}, {"mX": 6, "mY": 3}],
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": "Play_Zomb_Egypt_TombRaiser_Grave_Rise",
+        "DisplacePlants": true,
+        "RandomPlacement": false,
+        "ShakeScreen": false,
+        "GridClassesToDestroy": []
+}},
+{"aliases":["Conveyor7"],
+"objclass": "ModifyConveyorWaveActionProps",
+"objdata": {
+    "Remove": [
+        
+    ],
+    "Add": [
+        {"Type": "RTID(burstberry@PlantTypes)", "Weight": 60, "MaxCount": 5, "MaxWeightFactor": 0, "MaxCountCooldownSeconds": 7.5}
+    ]
+}},
+{"aliases":["GridSpawnII9"],
+    "objclass": "SpawnGravestonesWaveActionProps",
+    "objdata": {
+        "GravestonePool": [
+            {"Count": 1, "Type": "RTID(zombieportal_egyptbasicportal@CurrentLevel)"},
+            {"Count": 1, "Type": "RTID(zombieportal_egyptbasicarmor1portal@CurrentLevel)"},
+            {"Count": 1, "Type": "RTID(zombieportal_darkbasicarmor1portal@CurrentLevel)"}
+        ],
+        "SpawnPositionsPool": [{"mX": 6, "mY": 0}, {"mX": 7, "mY": 0}, {"mX": 5, "mY": 2}],
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": "Play_Zomb_Egypt_TombRaiser_Grave_Rise",
+        "DisplacePlants": true,
+        "RandomPlacement": false,
+        "ShakeScreen": false,
+        "GridClassesToDestroy": []
+}},
+{"aliases":["GridSpawnII10"],
+    "objclass": "SpawnGravestonesWaveActionProps",
+    "objdata": {
+        "GravestonePool": [
+            {"Count": 1, "Type": "RTID(zombieportal_darkbasicportal@CurrentLevel)"},
+            {"Count": 1, "Type": "RTID(zombieportal_egyptbasicportal@CurrentLevel)"},
+            {"Count": 1, "Type": "RTID(zombieportal_piratebasicportal@CurrentLevel)"}
+        ],
+        "SpawnPositionsPool": [{"mX": 5, "mY": 4}, {"mX": 6, "mY": 4}, {"mX": 7, "mY": 4}],
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": "Play_Zomb_Egypt_TombRaiser_Grave_Rise",
+        "DisplacePlants": true,
+        "RandomPlacement": false,
+        "ShakeScreen": false,
+        "GridClassesToDestroy": []
+}},
+{"aliases":["GridSpawnII12"],
+    "objclass": "SpawnGravestonesWaveActionProps",
+    "objdata": {
+        "GravestonePool": [
+            {"Count": 1, "Type": "RTID(zombieportal_darktrioportal@CurrentLevel)"},
+            {"Count": 1, "Type": "RTID(zombieportal_egypttrioportal@CurrentLevel)"}
+        ],
+        "SpawnPositionsPool": [{"mX": 6, "mY": 2}, {"mX": 5, "mY": 3}],
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": "Play_Zomb_Egypt_TombRaiser_Grave_Rise",
+        "DisplacePlants": true,
+        "RandomPlacement": false,
+        "ShakeScreen": false,
+        "GridClassesToDestroy": []
+}},
+{"aliases":["GridSpawnII14"],
+    "objclass": "SpawnGravestonesWaveActionProps",
+    "objdata": {
+        "GravestonePool": [
+            {"Count": 2, "Type": "RTID(zombieportal_piratebasicarmor1portal@CurrentLevel)"},
+            {"Count": 1, "Type": "RTID(zombieportal_piratetrioportal@CurrentLevel)"},
+            {"Count": 2, "Type": "RTID(zombieportal_egyptbasicarmor1portal@CurrentLevel)"},
+            {"Count": 1, "Type": "RTID(zombieportal_darkbasicportal@CurrentLevel)"},
+            {"Count": 1, "Type": "RTID(zombieportal_piratebasicportal@CurrentLevel)"},
+            {"Count": 1, "Type": "RTID(zombieportal_darkbasicarmor1portal@CurrentLevel)"},
+            {"Count": 1, "Type": "RTID(zombieportal_egyptbasicportal@CurrentLevel)"},
+            {"Count": 1, "Type": "RTID(zombieportal_darktrioportal@CurrentLevel)"}
+        ],
+        "SpawnPositionsPool": [{"mX": 6, "mY": 0}, {"mX": 6, "mY": 2}, {"mX": 7, "mY": 0}, {"mX": 6, "mY": 1}, {"mX": 6, "mY": 4}, {"mX": 7, "mY": 1}, {"mX": 7, "mY": 2}, {"mX": 6, "mY": 3}, {"mX": 7, "mY": 3}, {"mX": 7, "mY": 4}],
+        "SpawnEffectAnimID": "",
+        "SpawnSoundID": "Play_Zomb_Egypt_TombRaiser_Grave_Rise",
+        "DisplacePlants": true,
+        "RandomPlacement": false,
+        "ShakeScreen": false,
+        "GridClassesToDestroy": []
+}},
+{"aliases": ["zombieportal_egyptbasicportal"],
+"objclass": "GridItemType",
+"objdata": {
+    "TypeName": "zombieportal_dangerroom_dino",
+    "GridItemClass": "GridItemZombiePortal",
+    "Properties": "RTID(zombieportal_props_egyptbasicportal@CurrentLevel)",
+    "ResourceGroups": ["ModernPortalGroup"]
+}},
+{"aliases": ["zombieportal_props_egyptbasicportal"],
+"objclass": "GridItemZombiePortalProps",
+"objdata": {
+    "CanBeMowed": false,
+    "CloseAnimation": "end",
+    "Height": "ground",
+    "Hitpoints": 600,
+    "PopAnim": "POPANIM_EFFECTS_MODERN_PORTAL",
+    "PopAnimRenderOffset": { "x": 96, "y": 125 },
+    "PopAnimRigClass": "GridItemZombiePortal_AnimRig",
+    "SpawnAnimation": "spawn",
+    "World": "egypt",
+    "ZombieSpawnMethod": "NonRandomShuffled",
+    "ZombieSpawnPointOffset": 15,
+    "TimeBetweenSpawns": {"Min": 10, "Max": 12},
+    "ZombieTypesToSpawn": [
+        {"Weight": 1, "ZombieTypeName": "mummy"},
+        {"Weight": 1, "ZombieTypeName": "mummy"}
+    ]
+}},
+{"aliases": ["zombieportal_egyptbasicarmor1portal"],
+"objclass": "GridItemType",
+"objdata": {
+    "TypeName": "zombieportal_dangerroom_dino",
+    "GridItemClass": "GridItemZombiePortal",
+    "Properties": "RTID(zombieportal_props_egyptbasicarmor1portal@CurrentLevel)",
+    "ResourceGroups": ["ModernPortalGroup"]
+}},
+{"aliases": ["zombieportal_props_egyptbasicarmor1portal"],
+"objclass": "GridItemZombiePortalProps",
+"objdata": {
+    "CanBeMowed": false,
+    "CloseAnimation": "end",
+    "Height": "ground",
+    "Hitpoints": 600,
+    "PopAnim": "POPANIM_EFFECTS_MODERN_PORTAL",
+    "PopAnimRenderOffset": { "x": 96, "y": 125 },
+    "PopAnimRigClass": "GridItemZombiePortal_AnimRig",
+    "SpawnAnimation": "spawn",
+    "World": "egypt",
+    "ZombieSpawnMethod": "NonRandomShuffled",
+    "ZombieSpawnPointOffset": 15,
+    "TimeBetweenSpawns": {"Min": 10, "Max": 12},
+    "ZombieTypesToSpawn": [
+        {"Weight": 1, "ZombieTypeName": "mummy"},
+        {"Weight": 1, "ZombieTypeName": "mummy_armor1"}
+    ]
+}},
+{"aliases": ["zombieportal_egypttrioportal"],
+"objclass": "GridItemType",
+"objdata": {
+    "TypeName": "zombieportal_dangerroom_dino",
+    "GridItemClass": "GridItemZombiePortal",
+    "Properties": "RTID(zombieportal_props_egypttrioportal@CurrentLevel)",
+    "ResourceGroups": ["ModernPortalGroup"]
+}},
+{"aliases": ["zombieportal_props_egypttrioportal"],
+"objclass": "GridItemZombiePortalProps",
+"objdata": {
+    "CanBeMowed": false,
+    "CloseAnimation": "end",
+    "Height": "ground",
+    "Hitpoints": 600,
+    "PopAnim": "POPANIM_EFFECTS_MODERN_PORTAL",
+    "PopAnimRenderOffset": { "x": 96, "y": 125 },
+    "PopAnimRigClass": "GridItemZombiePortal_AnimRig",
+    "SpawnAnimation": "spawn",
+    "World": "egypt",
+    "ZombieSpawnMethod": "NonRandomShuffled",
+    "ZombieSpawnPointOffset": 15,
+    "TimeBetweenSpawns": {"Min": 10, "Max": 12},
+    "ZombieTypesToSpawn": [
+        {"Weight": 1, "ZombieTypeName": "mummy"},
+        {"Weight": 1, "ZombieTypeName": "mummy_armor1"},
+        {"Weight": 1, "ZombieTypeName": "mummy_armor2"}
+    ]
+}},
+{"aliases": ["zombieportal_darkbasicportal"],
+"objclass": "GridItemType",
+"objdata": {
+    "TypeName": "zombieportal_dangerroom_dino",
+    "GridItemClass": "GridItemZombiePortal",
+    "Properties": "RTID(zombieportal_props_darkbasicportal@CurrentLevel)",
+    "ResourceGroups": ["ModernPortalGroup"]
+}},
+{"aliases": ["zombieportal_props_darkbasicportal"],
+"objclass": "GridItemZombiePortalProps",
+"objdata": {
+    "CanBeMowed": false,
+    "CloseAnimation": "end",
+    "Height": "ground",
+    "Hitpoints": 600,
+    "PopAnim": "POPANIM_EFFECTS_MODERN_PORTAL",
+    "PopAnimRenderOffset": { "x": 96, "y": 125 },
+    "PopAnimRigClass": "GridItemZombiePortal_AnimRig",
+    "SpawnAnimation": "spawn",
+    "World": "dark",
+    "ZombieSpawnMethod": "NonRandomShuffled",
+    "ZombieSpawnPointOffset": 15,
+    "TimeBetweenSpawns": {"Min": 10, "Max": 12},
+    "ZombieTypesToSpawn": [
+        {"Weight": 1, "ZombieTypeName": "dark"},
+        {"Weight": 1, "ZombieTypeName": "dark"}
+    ]
+}},
+{"aliases": ["zombieportal_darkbasicarmor1portal"],
+"objclass": "GridItemType",
+"objdata": {
+    "TypeName": "zombieportal_dangerroom_dino",
+    "GridItemClass": "GridItemZombiePortal",
+    "Properties": "RTID(zombieportal_props_darkbasicarmor1portal@CurrentLevel)",
+    "ResourceGroups": ["ModernPortalGroup"]
+}},
+{"aliases": ["zombieportal_props_darkbasicarmor1portal"],
+"objclass": "GridItemZombiePortalProps",
+"objdata": {
+    "CanBeMowed": false,
+    "CloseAnimation": "end",
+    "Height": "ground",
+    "Hitpoints": 600,
+    "PopAnim": "POPANIM_EFFECTS_MODERN_PORTAL",
+    "PopAnimRenderOffset": { "x": 96, "y": 125 },
+    "PopAnimRigClass": "GridItemZombiePortal_AnimRig",
+    "SpawnAnimation": "spawn",
+    "World": "dark",
+    "ZombieSpawnMethod": "NonRandomShuffled",
+    "ZombieSpawnPointOffset": 15,
+    "TimeBetweenSpawns": {"Min": 10, "Max": 12},
+    "ZombieTypesToSpawn": [
+        {"Weight": 1, "ZombieTypeName": "dark"},
+        {"Weight": 1, "ZombieTypeName": "dark_armor1"}
+    ]
+}},
+{"aliases": ["zombieportal_darktrioportal"],
+"objclass": "GridItemType",
+"objdata": {
+    "TypeName": "zombieportal_dangerroom_dino",
+    "GridItemClass": "GridItemZombiePortal",
+    "Properties": "RTID(zombieportal_props_darktrioportal@CurrentLevel)",
+    "ResourceGroups": ["ModernPortalGroup"]
+}},
+{"aliases": ["zombieportal_props_darktrioportal"],
+"objclass": "GridItemZombiePortalProps",
+"objdata": {
+    "CanBeMowed": false,
+    "CloseAnimation": "end",
+    "Height": "ground",
+    "Hitpoints": 600,
+    "PopAnim": "POPANIM_EFFECTS_MODERN_PORTAL",
+    "PopAnimRenderOffset": { "x": 96, "y": 125 },
+    "PopAnimRigClass": "GridItemZombiePortal_AnimRig",
+    "SpawnAnimation": "spawn",
+    "World": "dark",
+    "ZombieSpawnMethod": "NonRandomShuffled",
+    "ZombieSpawnPointOffset": 15,
+    "TimeBetweenSpawns": {"Min": 10, "Max": 12},
+    "ZombieTypesToSpawn": [
+        {"Weight": 1, "ZombieTypeName": "dark"},
+        {"Weight": 1, "ZombieTypeName": "dark_armor1"},
+        {"Weight": 1, "ZombieTypeName": "dark_armor2"}
+    ]
+}},
+{"aliases": ["zombieportal_piratebasicportal"],
+"objclass": "GridItemType",
+"objdata": {
+    "TypeName": "zombieportal_dangerroom_dino",
+    "GridItemClass": "GridItemZombiePortal",
+    "Properties": "RTID(zombieportal_props_piratebasicportal@CurrentLevel)",
+    "ResourceGroups": ["ModernPortalGroup"]
+}},
+{"aliases": ["zombieportal_props_piratebasicportal"],
+"objclass": "GridItemZombiePortalProps",
+"objdata": {
+    "CanBeMowed": false,
+    "CloseAnimation": "end",
+    "Height": "ground",
+    "Hitpoints": 600,
+    "PopAnim": "POPANIM_EFFECTS_MODERN_PORTAL",
+    "PopAnimRenderOffset": { "x": 96, "y": 125 },
+    "PopAnimRigClass": "GridItemZombiePortal_AnimRig",
+    "SpawnAnimation": "spawn",
+    "World": "pirate",
+    "ZombieSpawnMethod": "NonRandomShuffled",
+    "ZombieSpawnPointOffset": 15,
+    "TimeBetweenSpawns": {"Min": 10, "Max": 12},
+    "ZombieTypesToSpawn": [
+        {"Weight": 1, "ZombieTypeName": "pirate"},
+        {"Weight": 1, "ZombieTypeName": "pirate"}
+    ]
+}},
+{"aliases": ["zombieportal_piratebasicarmor1portal"],
+"objclass": "GridItemType",
+"objdata": {
+    "TypeName": "zombieportal_dangerroom_dino",
+    "GridItemClass": "GridItemZombiePortal",
+    "Properties": "RTID(zombieportal_props_piratebasicarmor1portal@CurrentLevel)",
+    "ResourceGroups": ["ModernPortalGroup"]
+}},
+{"aliases": ["zombieportal_props_piratebasicarmor1portal"],
+"objclass": "GridItemZombiePortalProps",
+"objdata": {
+    "CanBeMowed": false,
+    "CloseAnimation": "end",
+    "Height": "ground",
+    "Hitpoints": 600,
+    "PopAnim": "POPANIM_EFFECTS_MODERN_PORTAL",
+    "PopAnimRenderOffset": { "x": 96, "y": 125 },
+    "PopAnimRigClass": "GridItemZombiePortal_AnimRig",
+    "SpawnAnimation": "spawn",
+    "World": "pirate",
+    "ZombieSpawnMethod": "NonRandomShuffled",
+    "ZombieSpawnPointOffset": 15,
+    "TimeBetweenSpawns": {"Min": 10, "Max": 12},
+    "ZombieTypesToSpawn": [
+        {"Weight": 1, "ZombieTypeName": "pirate"},
+        {"Weight": 1, "ZombieTypeName": "pirate_armor1"}
+    ]
+}},
+{"aliases": ["zombieportal_piratetrioportal"],
+"objclass": "GridItemType",
+"objdata": {
+    "TypeName": "zombieportal_dangerroom_dino",
+    "GridItemClass": "GridItemZombiePortal",
+    "Properties": "RTID(zombieportal_props_piratetrioportal@CurrentLevel)",
+    "ResourceGroups": ["ModernPortalGroup"]
+}},
+{"aliases": ["zombieportal_props_piratetrioportal"],
+"objclass": "GridItemZombiePortalProps",
+"objdata": {
+    "CanBeMowed": false,
+    "CloseAnimation": "end",
+    "Height": "ground",
+    "Hitpoints": 600,
+    "PopAnim": "POPANIM_EFFECTS_MODERN_PORTAL",
+    "PopAnimRenderOffset": { "x": 96, "y": 125 },
+    "PopAnimRigClass": "GridItemZombiePortal_AnimRig",
+    "SpawnAnimation": "spawn",
+    "World": "pirate",
+    "ZombieSpawnMethod": "NonRandomShuffled",
+    "ZombieSpawnPointOffset": 15,
+    "TimeBetweenSpawns": {"Min": 10, "Max": 12},
+    "ZombieTypesToSpawn": [
+        {"Weight": 1, "ZombieTypeName": "pirate"},
+        {"Weight": 1, "ZombieTypeName": "pirate_armor1"},
+        {"Weight": 1, "ZombieTypeName": "pirate_armor2"}
+    ]
+}},
+        {}
+    ],
+    "version": 1
+}
